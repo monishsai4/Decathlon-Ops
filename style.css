@@ -1,0 +1,30 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: Arial, sans-serif;
+}
+body {
+  padding-top: 56px; /* Height of the navbar */
+}
+
+/* Ensure the sticky grid item does not overlap with the fixed navbar */
+.sticky-item {
+  top: 56px; /* Height of the navbar */
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#totalAmount {
+  font-weight: bold;
+}
+
+#invoiceButton {
+  display: none;
+}
+.styleme {
+  padding: 5px;
+  background-image: linear-gradient(to right, #808080, #4f7c7c);
+  color: white;
+}
