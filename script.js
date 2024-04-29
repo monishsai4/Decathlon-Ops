@@ -8,7 +8,7 @@ const totalAmountDisplay = document.getElementById("totalAmount");
 function priceInput(productNameInp) {
   if (productNameInp == "KIPRUN KS900") {
     var priceIn = 8999;
-  } else if (productNameInp == "Kiprun KD900- Orange") {
+  } else if (productNameInp == "Kiprun KD900") {
     var priceIn = 8999;
   } else if (productNameInp == "QUECHUA:Camping Tent") {
     var priceIn = 11999;
