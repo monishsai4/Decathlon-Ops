@@ -45,7 +45,24 @@ function generateInvoice() {
   invoiceWindow.document.write("</style>");
   invoiceWindow.document.write("</head><body>");
   invoiceWindow.document.write('<h1 id="invoiceTitle">Invoice</h1>');
-  invoiceWindow.document.write(invoiceTable);
+  invoiceWindow.document.write("<table>");
+
+  // Iterate through the rows of the table
+  var rows = invoiceBody.rows;
+  for (let i = 0; i < rows.length; i++) {
+    invoiceWindow.document.write("<tr>");
+
+    // Iterate through the cells of the row, selecting only the first three cells
+    for (let j = 0; j < 3; j++) {
+      invoiceWindow.document.write("<td>");
+      invoiceWindow.document.write(rows[i].cells[j].innerHTML);
+      invoiceWindow.document.write("</td>");
+    }
+
+    invoiceWindow.document.write("</tr>");
+  }
+
+  invoiceWindow.document.write("</table>");
   invoiceWindow.document.write('<p id="totalAmount">' + totalAmount + "</p>");
   invoiceWindow.document.close();
   invoiceWindow.print();
