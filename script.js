@@ -82,7 +82,15 @@ function addProductToTable() {
   const newRow = invoiceBody.insertRow();
   newRow.insertCell().textContent = productName;
   newRow.insertCell().textContent = quantity;
-  newRow.insertCell().textContent = total.toFixed(2);
+  newRow.insertCell().textContent = Math.trunc(total.toFixed(2));
+  const deleteButtonCell = newRow.insertCell();
+  const deleteButton = document.createElement("button");
+  deleteButton.textContent = "Delete";
+  deleteButton.addEventListener("click", function () {
+    delete_row(this);
+    updateTotal();
+  });
+  deleteButtonCell.appendChild(deleteButton);
 
   clearForm();
 }
@@ -99,5 +107,10 @@ function updateTotal() {
     total += rowTotal;
   }
 
-  totalAmountDisplay.textContent = `Total Amount: ₹${total.toFixed(2)}`;
+  totalAmountDisplay.textContent = `Total Amount: ₹${Math.trunc(
+    total.toFixed(2)
+  )}`;
+}
+function delete_row(e) {
+  e.parentNode.parentNode.parentNode.removeChild(e.parentNode.parentNode);
 }
